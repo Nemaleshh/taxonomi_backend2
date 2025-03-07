@@ -2,3 +2,5 @@
 2025-03-07 23:37:56,680 - app - ERROR - Unexpected error: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
 2025-03-07 23:38:11,083 - app - ERROR - Unexpected error: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
 2025-03-07 23:38:12,229 - app - ERROR - Unexpected error: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+2025-03-07 23:52:14,775 - app - INFO - Successfully loaded model model
+2025-03-07 23:52:24,497 - app - ERROR - Unexpected error: 405 Method Not Allowed: The method is not allowed for the requested URL.

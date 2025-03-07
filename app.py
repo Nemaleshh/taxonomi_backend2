@@ -113,6 +113,17 @@ class GDPPredictionSchema(Schema):
     m2_money_supply = fields.Float(required=True)
     federal_debt = fields.Float(required=True)
 
+@app.route('/')
+def home():
+    return jsonify({
+        "message": "Welcome to the GDP Prediction API",
+        "endpoints": {
+            "predict": "/api/predict (POST)",
+            "model_info": "/api/model-info (GET)",
+            "health": "/api/health (GET)"
+        }
+    })
+
 @app.route('/api/predict', methods=['POST'])
 def predict_gdp():
     if not load_model():
@@ -174,6 +185,14 @@ def health_check():
         "status": "running",
         "model_loaded": MODEL is not None
     })
+
+@app.errorhandler(404)
+def not_found_error(error):
+    app.logger.error(f"404 Not Found: {request.url}")
+    return jsonify({
+        "error": "Not Found",
+        "message": "The requested URL was not found on the server. Please check the endpoint and try again."
+    }), 404
 
 @app.errorhandler(Exception)
 def handle_exception(e):
