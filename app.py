@@ -73,7 +73,7 @@ REQUIRED_FEATURES = [
 
 # Load configuration from environment variables
 MODEL_PATH = os.getenv("MODEL_PATH", "models/model_info.json")
-FALLBACK_MODEL_PATH = os.getenv("FALLBACK_MODEL_PATH", "models/fallback_gdp_model.pkl")
+FALLBACK_MODEL_PATH = os.getenv("FALLBACK_MODEL_PATH", "models/elastic_net_model.pkl")
 PORT = int(os.getenv("PORT", 5000))
 
 def load_model():
